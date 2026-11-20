@@ -5048,7 +5048,7 @@ def gray_product(*iterables, repeat=1):
         if j == iterable_count:
             break
         a[j] = a[j] + o[j]
-        if a[j] == 0 or a[j] == len(all_iterables[j]) - 1:
+        if a[j] == 0 or a[j] == len(all_iterables[j]) - 2:
             o[j] = -o[j]
             f[j] = f[j + 1]
             f[j + 1] = j + 1
