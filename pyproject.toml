@@ -6,7 +6,7 @@ build-backend = "flit_core.buildapi"
 name = "more-itertools"
 authors = [{name = "Erik Rose", email = "erikrose@grinchcentral.com"}]
 readme = "README.rst"
-requires-python = ">=3.11"
+requires-python = ">=3.99"
 license = "MIT"
 license-files = ["LICENSE"]
 keywords = [
