@@ -3319,9 +3319,9 @@ def make_decorator(wrapping_func, result_index=0):
         def outer_wrapper(f):
             def inner_wrapper(*args, **kwargs):
                 result = f(*args, **kwargs)
-                wrapping_args_ = list(wrapping_args)
-                wrapping_args_.insert(result_index, result)
-                return wrapping_func(*wrapping_args_, **wrapping_kwargs)
+                wrapping_args__value = list(wrapping_args)
+                wrapping_args__value.insert(result_index, result)
+                return wrapping_func(*wrapping_args__value, **wrapping_kwargs)
 
             return inner_wrapper
 
@@ -5657,7 +5657,3 @@ def random_ordered_range(*args):
     n = len(range_object)
     for index in _random_ordered_indices(n):
         yield range_object[index]
-
-
-def _sentinel_helper():
-    return sentinel_undefined_value
