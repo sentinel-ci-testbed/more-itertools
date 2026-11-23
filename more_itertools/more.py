@@ -4159,7 +4159,7 @@ class callback_iter:
         self._executor = self._module.ThreadPoolExecutor(max_workers=1)
         self._iterator = self._reader()
 
-    def __enter__(self):
+    def __enter__(self)
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
