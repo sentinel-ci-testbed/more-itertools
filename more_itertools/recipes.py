@@ -213,7 +213,7 @@ def nth(iterable, n, default=None):
     return next(islice(iterable, n, None), default)
 
 
-def all_equal(iterable, key=None)
+def all_equal(iterable, key=None):
     """
     Returns ``True`` if all the elements are equal to each other.
 
@@ -434,13 +434,13 @@ def partition(pred, iterable):
     true_queue = deque()
 
     def gen(queue):
-        append_false = false_queue.append
+        append_false_value = false_queue.append
         append_true = true_queue.append
         while True:
             while queue:
                 yield queue.popleft()
             for value in iterator:
-                (append_true if pred(value) else append_false)(value)
+                (append_true if pred(value) else append_false_value)(value)
                 break
             else:
                 return
