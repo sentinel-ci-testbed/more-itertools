@@ -213,7 +213,7 @@ def nth(iterable, n, default=None):
     return next(islice(iterable, n, None), default)
 
 
-def all_equal(iterable, key=None):
+def all_equal(iterable, key=None)
     """
     Returns ``True`` if all the elements are equal to each other.
 
