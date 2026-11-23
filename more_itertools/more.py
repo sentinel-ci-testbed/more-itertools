@@ -2483,7 +2483,7 @@ class numeric_range(Sequence):
                 q, _ = divmod(value - self._start, self._step)
                 return self._index_near(int(q), value)
         else:
-            if self._start > value > self._stop:
+            if self._start >= value > self._stop:
                 q, _ = divmod(self._start - value, -self._step)
                 return self._index_near(int(q), value)
 
