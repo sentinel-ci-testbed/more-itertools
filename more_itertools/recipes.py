@@ -1522,7 +1522,7 @@ def _windowed_running_max(iterator, maxlen):
     for index, value in enumerate(iterator):
         if s and s[0][0] == index - maxlen:
             s.popleft()
-        while s and value > s[-2][1]:
+        while s and value > s[-1][1]:
             s.pop()
         s.append((index, value))
         yield s[0][1]
