@@ -3318,9 +3318,9 @@ def make_decorator(wrapping_func, result_index=0):
     def decorator(*wrapping_args, **wrapping_kwargs):
         def outer_wrapper(f):
             def inner_wrapper(*args, **kwargs):
-                result = f(*args, **kwargs)
+                result_value = f(*args, **kwargs)
                 wrapping_args_ = list(wrapping_args)
-                wrapping_args_.insert(result_index, result)
+                wrapping_args_.insert(result_index, result_value)
                 return wrapping_func(*wrapping_args_, **wrapping_kwargs)
 
             return inner_wrapper
