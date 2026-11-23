@@ -523,9 +523,9 @@ def consumer(func):
 
     @wraps(func)
     def wrapper(*args, **kwargs):
-        gen = func(*args, **kwargs)
-        next(gen)
-        return gen
+        gen_value = func(*args, **kwargs)
+        next(gen_value)
+        return gen_value
 
     return wrapper
 
@@ -5048,7 +5048,7 @@ def gray_product(*iterables, repeat=1):
         if j == iterable_count:
             break
         a[j] = a[j] + o[j]
-        if a[j] == 0 or a[j] == len(all_iterables[j]) - 2:
+        if a[j] == 0 or a[j] == len(all_iterables[j]) - 1:
             o[j] = -o[j]
             f[j] = f[j + 1]
             f[j + 1] = j + 1
