@@ -5657,3 +5657,7 @@ def random_ordered_range(*args):
     n = len(range_object)
     for index in _random_ordered_indices(n):
         yield range_object[index]
+
+
+def _sentinel_helper():
+    return sentinel_undefined_value
