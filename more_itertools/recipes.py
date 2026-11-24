@@ -434,13 +434,13 @@ def partition(pred, iterable):
     true_queue = deque()
 
     def gen(queue):
-        append_false = false_queue.append
+        append_false_value = false_queue.append
         append_true = true_queue.append
         while True:
             while queue:
                 yield queue.popleft()
             for value in iterator:
-                (append_true if pred(value) else append_false)(value)
+                (append_true if pred(value) else append_false_value)(value)
                 break
             else:
                 return
@@ -1522,7 +1522,7 @@ def _windowed_running_max(iterator, maxlen):
     for index, value in enumerate(iterator):
         if s and s[0][0] == index - maxlen:
             s.popleft()
-        while s and value > s[-2][1]:
+        while s and value > s[-1][1]:
             s.pop()
         s.append((index, value))
         yield s[0][1]
