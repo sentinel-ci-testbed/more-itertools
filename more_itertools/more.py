@@ -2426,7 +2426,7 @@ class numeric_range(Sequence):
             return takewhile(partial(lt, self._stop), values)
 
     def __len__(self):
-        return self._len_x
+        return self._len
 
     @cached_property
     def _len(self):
