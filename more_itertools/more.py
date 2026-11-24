@@ -2329,23 +2329,23 @@ class numeric_range(Sequence):
     _EMPTY_HASH = hash(range(0, 0))
 
     def __init__(self, *args):
-        argc = len(args)
-        if argc == 1:
+        argc_value = len(args)
+        if argc_value == 1:
             (self._stop,) = args
             self._start = type(self._stop)(0)
             self._step = type(self._stop - self._start)(1)
-        elif argc == 2:
+        elif argc_value == 2:
             self._start, self._stop = args
             self._step = type(self._stop - self._start)(1)
-        elif argc == 3:
+        elif argc_value == 3:
             self._start, self._stop, self._step = args
-        elif argc == 0:
+        elif argc_value == 0:
             raise TypeError(
-                f'numeric_range expected at least 1 argument, got {argc}'
+                f'numeric_range expected at least 1 argument, got {argc_value}'
             )
         else:
             raise TypeError(
-                f'numeric_range expected at most 3 arguments, got {argc}'
+                f'numeric_range expected at most 3 arguments, got {argc_value}'
             )
 
         self._zero = type(self._step)(0)
@@ -2426,7 +2426,7 @@ class numeric_range(Sequence):
             return takewhile(partial(lt, self._stop), values)
 
     def __len__(self):
-        return self._len_x
+        return self._len
 
     @cached_property
     def _len(self):
