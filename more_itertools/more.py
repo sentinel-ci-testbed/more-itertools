@@ -2383,7 +2383,7 @@ class numeric_range(Sequence):
         if not len_self:
             return True
 
-        if self._start != other._start:
+        if self._start != other._start_x:
             return False
 
         if len_self == 1:
